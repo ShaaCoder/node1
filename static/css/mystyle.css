@@ -1,0 +1,13 @@
+.haed 
+{
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+.my_footer
+{
+    margin-top: 10%;
+    background-color: black;
+    height: 400px;
+}

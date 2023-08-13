@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="haed">User List</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {{message}}
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Email Id</th>
+                    <th>Mobile Number</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+
+                {% comment %} <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>
+                        <a href="" class="btn btn-success">Edit</a>
+                        &nbsp;
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr> {% endcomment %}
+                {% for item in mydata %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.full_name}}</td>
+                    <td>{{item.email_id}}</td>
+                    <td>{{item.mob_num}}</td>
+                    <td>{{item.password}}</td>
+                    <td>
+                        <a href="edit/{{ item.id }}" class="btn btn-success">Edit</a>&nbsp;
+                        &nbsp;
+                        <a href="delete/{{ item.id }}" class="btn btn-danger">Delete</a>&nbsp;
+                    </td>
+                </tr>
+                {% endfor %}
+               
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% endblock 'content' %}
